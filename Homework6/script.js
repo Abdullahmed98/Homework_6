@@ -1,10 +1,14 @@
 $(document).ready(function(){
-var queryUrl = "http://api.openweathermap.org/data/2.5/forecast?q=london&units=metric&APPID=97d0e7d64f269c63c7265e82d7d3855e";
+var queryUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + location + "&units=metric&APPID=97d0e7d64f269c63c7265e82d7d3855e";
+var location = ""
 
 $("#search-weather").on("click", function(event){
 
-    var location = $("#weather-input").val();
-    queryUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + location + "&units=metric&APPID=97d0e7d64f269c63c7265e82d7d3855e";
+    location = $("#weather-input").val();
+    console.log(location)
+
+    
+})
 
 
 
@@ -29,6 +33,5 @@ $.ajax({
 
     var dateUrl = response.list[0].dt_txt;
     console.log(dateUrl)
-})
 })
 })
